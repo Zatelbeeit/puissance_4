@@ -1,0 +1,24 @@
+.cell{
+    border: 1px solid black;
+    width: 83px;
+    height:83px;
+    text-align: center;
+    
+    
+}
+.cell2{
+    border: 1px solid black;
+    width: 83px;
+    height:83px;
+    text-align: center;
+    
+    
+}
+
+body{
+    max-width:600px;
+    height: 500px;
+    display:flex;
+    flex-wrap: wrap;
+    margin: auto;
+}

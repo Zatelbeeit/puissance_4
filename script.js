@@ -40,11 +40,14 @@ for (let l = 0; l < distributor.length; l++) {
         distributorElement.appendChild(cell2Element);
         cell2Element.className = "cell2";
         cell2Element.setAttribute("id", k + "-" + l)
-        cell2Element.addEventListener("click", play)
-
+        
         var counter = document.createElement("div");
         counter.classList.add("counter");
         cell2Element.appendChild(counter)
+        counter.style.backgroundColor = "blue";
+
+        cell2Element.addEventListener("click", play)
+
         
         }
     
@@ -60,16 +63,35 @@ function play() {
     var column = splitAttribute[0];
 
     
-    currentColumns = document.querySelectorAll("div[id$='-"+column+"']:not(.played)");
-    currentCell = currentColumns[currentColumns.length - 1]
-    currentCell.classList.add("played")
-    currentCell.innerHTML = "X"
+    currentColumnCells = document.querySelectorAll("div[id$='-"+column+"']:not(.played)");
+    if(currentColumnCells.length > 0) {
+        currentCell = currentColumnCells[currentColumnCells.length - 1]
+        currentCell.classList.add("played")
+        // currentCell.appendChild(counter)
+        // counter.style.backgroundColor = "blue";
+        currentCell.innerHTML ="";
+        if(turn == -1){
+            turn = 1
+            counter.querySelectorAll(counter.style.backgroundColor = "red");
+            currentCell.style.backgroundColor ="blue";
 
-    if (currentColumns == column [6]);
-        alert("Joue ailleurs")
+        }else{
+            turn = -1
+            counter.querySelectorAll(counter.style.backgroundColor = "blue");
+            currentCell.style.backgroundColor = "red";
+
+        }
 
 
+    }
 
+    
+
+    
+    
+        
+    
+    
    
 
         // pour trouver la case vide avant use selector avec le .not.counter
